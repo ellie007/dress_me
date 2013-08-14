@@ -1,0 +1,175 @@
+DressMe::Application.routes.draw do
+  # Routes for the Shirt_top resource:
+  # CREATE
+  get '/shirt_tops/new', controller: 'shirt_tops', action: 'new', as: 'new_shirt_top'
+  post '/shirt_tops', controller: 'shirt_tops', action: 'create'
+
+  # READ
+  get '/shirt_tops', controller: 'shirt_tops', action: 'index'
+  get '/shirt_tops/:id', controller: 'shirt_tops', action: 'show', as: 'shirt_top'
+
+  # UPDATE
+  get '/shirt_tops/:id/edit', controller: 'shirt_tops', action: 'edit', as: 'edit_shirt_top'
+  patch '/shirt_tops/:id', controller: 'shirt_tops', action: 'update'
+
+  # DELETE
+  delete '/shirt_tops/:id', controller: 'shirt_tops', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Top resource:
+  # CREATE
+  get '/tops/new', controller: 'tops', action: 'new', as: 'new_top'
+  post '/tops', controller: 'tops', action: 'create'
+
+  # READ
+  get '/tops', controller: 'tops', action: 'index'
+  get '/tops/:id', controller: 'tops', action: 'show', as: 'top'
+
+  # UPDATE
+  get '/tops/:id/edit', controller: 'tops', action: 'edit', as: 'edit_top'
+  patch '/tops/:id', controller: 'tops', action: 'update'
+
+  # DELETE
+  delete '/tops/:id', controller: 'tops', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Shirt resource:
+  # CREATE
+  get '/shirts/new', controller: 'shirts', action: 'new', as: 'new_shirt'
+  post '/shirts', controller: 'shirts', action: 'create'
+
+  # READ
+  get '/shirts', controller: 'shirts', action: 'index'
+  get '/shirts/:id', controller: 'shirts', action: 'show', as: 'shirt'
+
+  # UPDATE
+  get '/shirts/:id/edit', controller: 'shirts', action: 'edit', as: 'edit_shirt'
+  patch '/shirts/:id', controller: 'shirts', action: 'update'
+
+  # DELETE
+  delete '/shirts/:id', controller: 'shirts', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Pant resource:
+  # CREATE
+  get '/pants/new', controller: 'pants', action: 'new', as: 'new_pant'
+  post '/pants', controller: 'pants', action: 'create'
+
+  # READ
+  get '/pants', controller: 'pants', action: 'index'
+  get '/pants/:id', controller: 'pants', action: 'show', as: 'pant'
+
+  # UPDATE
+  get '/pants/:id/edit', controller: 'pants', action: 'edit', as: 'edit_pant'
+  patch '/pants/:id', controller: 'pants', action: 'update'
+
+  # DELETE
+  delete '/pants/:id', controller: 'pants', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Dress_code resource:
+  # CREATE
+  get '/dress_codes/new', controller: 'dress_codes', action: 'new', as: 'new_dress_code'
+  post '/dress_codes', controller: 'dress_codes', action: 'create'
+
+  # READ
+  get '/dress_codes', controller: 'dress_codes', action: 'index'
+  get '/dress_codes/:id', controller: 'dress_codes', action: 'show', as: 'dress_code'
+
+  # UPDATE
+  get '/dress_codes/:id/edit', controller: 'dress_codes', action: 'edit', as: 'edit_dress_code'
+  patch '/dress_codes/:id', controller: 'dress_codes', action: 'update'
+
+  # DELETE
+  delete '/dress_codes/:id', controller: 'dress_codes', action: 'destroy'
+  #------------------------------
+
+  # Routes for the Clothing resource:
+  # CREATE
+  get '/clothings/new', controller: 'clothings', action: 'new', as: 'new_clothing'
+  post '/clothings', controller: 'clothings', action: 'create'
+
+  # READ
+  get '/clothings', controller: 'clothings', action: 'index'
+  get '/clothings/:id', controller: 'clothings', action: 'show', as: 'clothing'
+
+  # UPDATE
+  get '/clothings/:id/edit', controller: 'clothings', action: 'edit', as: 'edit_clothing'
+  patch '/clothings/:id', controller: 'clothings', action: 'update'
+
+  # DELETE
+  delete '/clothings/:id', controller: 'clothings', action: 'destroy'
+  #------------------------------
+
+  # Routes for the User resource:
+  # CREATE
+  get '/users/new', controller: 'users', action: 'new', as: 'new_user'
+  post '/users', controller: 'users', action: 'create'
+
+  # READ
+  get '/users', controller: 'users', action: 'index'
+  get '/users/:id', controller: 'users', action: 'show', as: 'user'
+
+  # UPDATE
+  get '/users/:id/edit', controller: 'users', action: 'edit', as: 'edit_user'
+  patch '/users/:id', controller: 'users', action: 'update'
+
+  # DELETE
+  delete '/users/:id', controller: 'users', action: 'destroy'
+  #------------------------------
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Example resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Example resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
+  
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
+
+  # Example resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+end

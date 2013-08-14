@@ -1,0 +1,15 @@
+<h1>Editing Dress Code #<%= @dress_code.id %></h1>
+
+
+<%= form_tag(dress_code_url(@dress_code), method: 'patch') do %>
+
+<div>
+    <%= label_tag :kind %><br />
+    <%= text_field_tag :kind , @dress_code.kind%>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Dress Code" %>
+  </div>
+
+<% end %>

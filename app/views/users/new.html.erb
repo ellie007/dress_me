@@ -1,0 +1,34 @@
+<h1>New User</h1>
+
+
+<%= form_tag(users_url, method: 'post') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+
+  <div>
+    <%= label_tag :height %><br />
+    <%= text_field_tag :height %>
+  </div>
+
+  <div>
+    <%= label_tag :weight %><br />
+    <%= text_field_tag :weight %>
+  </div>
+
+  <div>
+    <%= label_tag :body_type %><br />
+    <%= text_field_tag :body_type %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create User" %>
+  </div>
+<% end %>

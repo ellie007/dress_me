@@ -1,0 +1,33 @@
+<h1>Shirts/Tops</h1>
+
+<p><%= link_to 'Add a New Shirt Top', new_shirt_top_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Product ID</th>
+      <th>Color</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @shirt_tops.each do |shirt_top| %>
+    <td><%= image_tag shirt_top.image_url, width: 100 %></td>
+    <td><%= shirt_top.name %></td>
+    <td><%= shirt_top.product_id %></td>
+    <td><%= shirt_top.color %></td>
+    <td><%= shirt_top.size %></td>
+    <tr>
+
+      <td><%= link_to 'Show', shirt_top_url(shirt_top) %></td>
+      <td><%= link_to 'Edit', edit_shirt_top_url(shirt_top) %></td>
+      <td><%= link_to 'Destroy', shirt_top_url(shirt_top), method: 'delete', data: { confirm: "Do you really want to delete this shirt_top?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

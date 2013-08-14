@@ -1,0 +1,27 @@
+<h1>Dress codes</h1>
+
+<p><%= link_to 'Add a New Dress Code', new_dress_code_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dress Code Types:</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @dress_codes.each do |dress_code| %>
+    <tr>
+       <td><%= dress_code.kind %></td>
+
+      <td><%= link_to 'Show', dress_code_url(dress_code) %></td>
+      <td><%= link_to 'Edit', edit_dress_code_url(dress_code) %></td>
+      <td><%= link_to 'Destroy', dress_code_url(dress_code), method: 'delete', data: { confirm: "Do you really want to delete this dress_code?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

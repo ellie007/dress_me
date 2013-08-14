@@ -1,0 +1,33 @@
+<h1>Pants</h1>
+
+<p><%= link_to 'Add a New Pant', new_pant_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Product ID</th>
+      <th>Color</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @pants.each do |pant| %>
+    <tr>
+    <td><%= image_tag pant.image_url, width: 100 %></td>
+    <td><%= pant.name %></td>
+    <td><%= pant.product_id %></td>
+    <td><%= pant.color %></td>
+    <td><%= pant.size %></td>
+
+      <td><%= link_to 'Show', pant_url(pant) %></td>
+      <td><%= link_to 'Edit', edit_pant_url(pant) %></td>
+      <td><%= link_to 'Destroy', pant_url(pant), method: 'delete', data: { confirm: "Do you really want to delete this pant?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

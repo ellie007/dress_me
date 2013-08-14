@@ -1,0 +1,14 @@
+<h1>New Dress Code</h1>
+
+
+<%= form_tag(dress_codes_url, method: 'post') do %>
+
+<div>
+    <%= label_tag :kind %><br />
+    <%= text_field_tag :kind %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create Dress Code" %>
+  </div>
+<% end %>

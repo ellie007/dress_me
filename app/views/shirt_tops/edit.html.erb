@@ -1,0 +1,35 @@
+<h1>Editing Shirt/Top #<%= @shirt_top.id %></h1>
+
+
+<%= form_tag(shirt_top_url(@shirt_top), method: 'patch') do %>
+
+  <div>
+    <%= label_tag :image_url, 'Image URL'%><br />
+    <%= text_field_tag :image_url, @shirt_top.image_url %>
+  </div>
+
+    <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @shirt_top.name %>
+  </div>
+
+  <div>
+    <%= label_tag :product_id, "Product No." %><br />
+    <%= text_field_tag :product_id, @shirt_top.product_id %>
+  </div>
+
+  <div>
+    <%= label_tag :color %><br />
+    <%= text_field_tag :color, @shirt_top.color %>
+  </div>
+
+  <div>
+    <%= label_tag :size %><br />
+    <%= text_field_tag :size, @shirt_top.size %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Shirt/Top" %>
+  </div>
+
+<% end %>

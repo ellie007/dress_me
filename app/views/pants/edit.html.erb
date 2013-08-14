@@ -1,0 +1,35 @@
+<h1>Editing Pant #<%= @pant.id %></h1>
+
+
+<%= form_tag(pant_url(@pant), method: 'patch') do %>
+
+  <div>
+    <%= label_tag :image_url, 'Image URL'%><br />
+    <%= text_field_tag :image_url,  @pant.image_url %>
+  </div>
+
+    <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @pant.name %>
+  </div>
+
+  <div>
+    <%= label_tag :product_id, "Product No." %><br />
+    <%= text_field_tag :product_id, @pant.product_id %>
+  </div>
+
+  <div>
+    <%= label_tag :color %><br />
+    <%= text_field_tag :color, @pant.color %>
+  </div>
+
+  <div>
+    <%= label_tag :size %><br />
+    <%= text_field_tag :size, @pant.size %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Pant" %>
+  </div>
+
+<% end %>
