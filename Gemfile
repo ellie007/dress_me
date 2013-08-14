@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 gem 'starter_generators'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
