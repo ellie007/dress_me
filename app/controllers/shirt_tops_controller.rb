@@ -20,7 +20,6 @@ class ShirtTopsController < ApplicationController
     @shirt_top.color = params[:color]
     @shirt_top.size = params[:size]
 
-
     if @shirt_top.save
       redirect_to shirt_tops_url
     else

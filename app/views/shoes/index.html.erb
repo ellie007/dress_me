@@ -1,0 +1,34 @@
+<h1>Shoes</h1>
+
+<p><%= link_to 'Add a New Shoe', new_shoe_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Product ID</th>
+      <th>Color</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @shoes.each do |shoe| %>
+    <tr>
+
+   <td><%= image_tag shoe.image_url, width: 100 %></td>
+    <td><%= shoe.name %></td>
+    <td><%= shoe.product_id %></td>
+    <td><%= shoe.color %></td>
+    <td><%= shoe.size %></td>
+
+      <td><%= link_to 'Show', shoe_url(shoe) %></td>
+      <td><%= link_to 'Edit', edit_shoe_url(shoe) %></td>
+      <td><%= link_to 'Destroy', shoe_url(shoe), method: 'delete', data: { confirm: "Do you really want to delete this shoe?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
