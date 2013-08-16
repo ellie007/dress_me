@@ -1,21 +1,4 @@
 DressMe::Application.routes.draw do
-  # Routes for the Shoe resource:
-  # CREATE
-  get '/shoes/new', controller: 'shoes', action: 'new', as: 'new_shoe'
-  post '/shoes', controller: 'shoes', action: 'create'
-
-  # READ
-  get '/shoes', controller: 'shoes', action: 'index'
-  get '/shoes/:id', controller: 'shoes', action: 'show', as: 'shoe'
-
-  # UPDATE
-  get '/shoes/:id/edit', controller: 'shoes', action: 'edit', as: 'edit_shoe'
-  patch '/shoes/:id', controller: 'shoes', action: 'update'
-
-  # DELETE
-  delete '/shoes/:id', controller: 'shoes', action: 'destroy'
-  #------------------------------
-
   # Routes for the Shirt_top resource:
   # CREATE
   get '/shirt_tops/new', controller: 'shirt_tops', action: 'new', as: 'new_shirt_top'

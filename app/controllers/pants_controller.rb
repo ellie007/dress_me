@@ -14,13 +14,7 @@ class PantsController < ApplicationController
 
   def create
     @pant = Pant.new
-    @pant.image_url = params[:image_url]
-    @pant.name = params[:name]
-    @pant.product_id = params[:product_id]
-    @pant.color = params[:color]
-    @pant.size = params[:size]
-
-
+    
     if @pant.save
       redirect_to pants_url
     else
@@ -34,13 +28,7 @@ class PantsController < ApplicationController
 
   def update
     @pant = Pant.find_by_id(params[:id])
-    @pant.image_url = params[:image_url]
-    @pant.name = params[:name]
-    @pant.product_id = params[:product_id]
-    @pant.color = params[:color]
-    @pant.size = params[:size]
-
-
+    
     if @pant.save
       redirect_to pants_url
     else
