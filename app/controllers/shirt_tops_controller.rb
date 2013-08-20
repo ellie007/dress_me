@@ -1,4 +1,4 @@
-class ShirtTopsController < ApplicationController
+  class ShirtTopsController < ApplicationController
 
   def index
     @shirt_tops = ShirtTop.all
