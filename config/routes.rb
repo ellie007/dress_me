@@ -1,4 +1,7 @@
 DressMe::Application.routes.draw do
+
+  root 'users#index'
+
   # Routes for the Shoe resource:
   # CREATE
   get '/shoes/new', controller: 'shoes', action: 'new', as: 'new_shoe'
@@ -33,39 +36,6 @@ DressMe::Application.routes.draw do
   delete '/shirt_tops/:id', controller: 'shirt_tops', action: 'destroy'
   #------------------------------
 
-  # Routes for the Top resource:
-  # CREATE
-  get '/tops/new', controller: 'tops', action: 'new', as: 'new_top'
-  post '/tops', controller: 'tops', action: 'create'
-
-  # READ
-  get '/tops', controller: 'tops', action: 'index'
-  get '/tops/:id', controller: 'tops', action: 'show', as: 'top'
-
-  # UPDATE
-  get '/tops/:id/edit', controller: 'tops', action: 'edit', as: 'edit_top'
-  patch '/tops/:id', controller: 'tops', action: 'update'
-
-  # DELETE
-  delete '/tops/:id', controller: 'tops', action: 'destroy'
-  #------------------------------
-
-  # Routes for the Shirt resource:
-  # CREATE
-  get '/shirts/new', controller: 'shirts', action: 'new', as: 'new_shirt'
-  post '/shirts', controller: 'shirts', action: 'create'
-
-  # READ
-  get '/shirts', controller: 'shirts', action: 'index'
-  get '/shirts/:id', controller: 'shirts', action: 'show', as: 'shirt'
-
-  # UPDATE
-  get '/shirts/:id/edit', controller: 'shirts', action: 'edit', as: 'edit_shirt'
-  patch '/shirts/:id', controller: 'shirts', action: 'update'
-
-  # DELETE
-  delete '/shirts/:id', controller: 'shirts', action: 'destroy'
-  #------------------------------
 
   # Routes for the Pant resource:
   # CREATE
@@ -101,22 +71,6 @@ DressMe::Application.routes.draw do
   delete '/dress_codes/:id', controller: 'dress_codes', action: 'destroy'
   #------------------------------
 
-  # Routes for the Clothing resource:
-  # CREATE
-  get '/clothings/new', controller: 'clothings', action: 'new', as: 'new_clothing'
-  post '/clothings', controller: 'clothings', action: 'create'
-
-  # READ
-  get '/clothings', controller: 'clothings', action: 'index'
-  get '/clothings/:id', controller: 'clothings', action: 'show', as: 'clothing'
-
-  # UPDATE
-  get '/clothings/:id/edit', controller: 'clothings', action: 'edit', as: 'edit_clothing'
-  patch '/clothings/:id', controller: 'clothings', action: 'update'
-
-  # DELETE
-  delete '/clothings/:id', controller: 'clothings', action: 'destroy'
-  #------------------------------
 
   # Routes for the User resource:
   # CREATE
@@ -175,7 +129,7 @@ DressMe::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
