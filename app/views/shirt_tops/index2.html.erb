@@ -10,6 +10,7 @@
       <th>Product ID</th>
       <th>Color</th>
       <th>Size</th>
+      <th>Outfit No.</th>
     </tr>
   </thead>
 
@@ -20,6 +21,7 @@
     <td><%= shirt_top.product_id %></td>
     <td><%= shirt_top.color %></td>
     <td><%= shirt_top.size %></td>
+    <td><%= shirt_top.outfit_id %></td>
     <tr>
 
       <td><%= link_to 'Show', shirt_top_url(shirt_top) %></td>
@@ -30,4 +32,3 @@
   <% end %>
   </tbody>
 </table>
-

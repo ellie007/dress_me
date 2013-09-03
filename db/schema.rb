@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820163614) do
+ActiveRecord::Schema.define(version: 20130831000040) do
+
+  create_table "combinations", force: true do |t|
+    t.integer  "shirt_top_id"
+    t.integer  "pant_id"
+    t.integer  "shoe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dress_codes", force: true do |t|
     t.string "kind"
+  end
+
+  create_table "outfits", force: true do |t|
+    t.integer "shirt_top_id"
+    t.integer "pant_id"
+    t.integer "shoe_id"
   end
 
   create_table "pants", force: true do |t|
@@ -26,11 +40,12 @@ ActiveRecord::Schema.define(version: 20130820163614) do
   end
 
   create_table "shirt_tops", force: true do |t|
-    t.string "name"
-    t.string "product_id"
-    t.string "color"
-    t.string "size"
-    t.string "image_url"
+    t.string  "name"
+    t.string  "product_id"
+    t.string  "color"
+    t.string  "size"
+    t.string  "image_url"
+    t.integer "outfit_id"
   end
 
   create_table "shoes", force: true do |t|
@@ -47,6 +62,7 @@ ActiveRecord::Schema.define(version: 20130820163614) do
     t.integer "height"
     t.integer "weight"
     t.string  "body_type"
+    t.string  "password_digest"
   end
 
 end

@@ -1,6 +1,9 @@
 class ShoesController < ApplicationController
 
-  def index
+  def index1
+    @shoes = Shoe.all
+  end
+  def index2
     @shoes = Shoe.all
   end
 
@@ -21,7 +24,7 @@ class ShoesController < ApplicationController
     @shoe.size = params[:size]
 
     if @shoe.save
-      redirect_to shoes_url
+      redirect_to shoes1_url
     else
       render 'new'
     end
@@ -40,7 +43,7 @@ class ShoesController < ApplicationController
     @shoe.size = params[:size]
 
     if @shoe.save
-      redirect_to shoes_url
+      redirect_to shoes1_url
     else
       render 'new'
     end
@@ -49,6 +52,6 @@ class ShoesController < ApplicationController
   def destroy
     @shoe = Shoe.find_by_id(params[:id])
     @shoe.destroy
-    redirect_to shoes_url
+    redirect_to shoes1_url
   end
 end

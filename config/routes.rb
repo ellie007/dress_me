@@ -1,6 +1,30 @@
 DressMe::Application.routes.draw do
 
-  root 'users#index'
+  root 'outfits#index'
+
+   get '/sessions/new' => 'sessions#new', :as => 'new_session'
+  post '/sessions' => 'sessions#create', :as => 'sessions'
+  delete '/sessions' => 'sessions#destroy', :as => 'session'
+
+  # Routes for the Outfit resource:
+  # CREATE
+  get '/outfits/new', controller: 'outfits', action: 'new', as: 'new_outfit'
+  post '/outfits', controller: 'outfits', action: 'create'
+
+  # READ
+  get '/outfits1', controller: 'outfits', action: 'index'
+  get '/outfits/:id', controller: 'outfits', action: 'show', as: 'outfit'
+
+  get '/outfits2', controller: 'outfits', action: 'index2'
+  get '/outfits3', controller: 'outfits', action: 'index3'
+
+  # UPDATE
+  get '/outfits/:id/edit', controller: 'outfits', action: 'edit', as: 'edit_outfit'
+  patch '/outfits/:id', controller: 'outfits', action: 'update'
+
+  # DELETE
+  delete '/outfits/:id', controller: 'outfits', action: 'destroy'
+  #------------------------------
 
   # Routes for the Shoe resource:
   # CREATE
@@ -8,8 +32,10 @@ DressMe::Application.routes.draw do
   post '/shoes', controller: 'shoes', action: 'create'
 
   # READ
-  get '/shoes', controller: 'shoes', action: 'index'
+  get '/shoes1', controller: 'shoes', action: 'index1'
   get '/shoes/:id', controller: 'shoes', action: 'show', as: 'shoe'
+
+  get '/shoes2', controller: 'shoes', action: 'index2'
 
   # UPDATE
   get '/shoes/:id/edit', controller: 'shoes', action: 'edit', as: 'edit_shoe'
@@ -25,8 +51,10 @@ DressMe::Application.routes.draw do
   post '/shirt_tops', controller: 'shirt_tops', action: 'create'
 
   # READ
-  get '/shirt_tops', controller: 'shirt_tops', action: 'index'
+  get '/shirt_tops1', controller: 'shirt_tops', action: 'index1'
   get '/shirt_tops/:id', controller: 'shirt_tops', action: 'show', as: 'shirt_top'
+
+  get '/shirt_tops2', controller: 'shirt_tops', action: 'index2'
 
   # UPDATE
   get '/shirt_tops/:id/edit', controller: 'shirt_tops', action: 'edit', as: 'edit_shirt_top'
@@ -43,8 +71,10 @@ DressMe::Application.routes.draw do
   post '/pants', controller: 'pants', action: 'create'
 
   # READ
-  get '/pants', controller: 'pants', action: 'index'
+  get '/pants1', controller: 'pants', action: 'index1'
   get '/pants/:id', controller: 'pants', action: 'show', as: 'pant'
+
+  get '/pants2', controller: 'pants', action: 'index2'
 
   # UPDATE
   get '/pants/:id/edit', controller: 'pants', action: 'edit', as: 'edit_pant'

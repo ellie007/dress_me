@@ -25,3 +25,6 @@
   <%= @shoe.size %>
 </p>
 
+     <td><%= link_to 'Edit', edit_shoe_url(@shoe) %></td>
+      <td><%= link_to 'Destroy', shoe_url(@shoe), method: 'delete', data: { confirm: "Do you really want to delete this shoe?" } %></td>
+

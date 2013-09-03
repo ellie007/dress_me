@@ -1,0 +1,36 @@
+<h1>Outfits</h1>
+
+<p><%= link_to 'Add a New Outfit', new_outfit_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>The Shirt/Top you should wear:</th>
+      <th>The Pants you should wear:</th>
+      <th>The Shoes you should wear:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%# @outfits.each do |outfit| %>
+    <tr>
+      <td><%= image_tag @shirt_top.image_url, width: 300 %></td>
+      <p><%#= button_tag '<i class="icon-check-empty"></i>'.html_safe %></p>
+      <td><%= image_tag @pant.image_url, width: 300 %></td>
+      <td><%= image_tag @shoe.image_url, width: 300 %></td>
+
+      <td><%#= link_to 'Show', outfit_url(outfit) %></td>
+      <td><%#= link_to 'Edit', edit_outfit_url(outfit) %></td>
+      <td><%#= link_to 'Destroy', outfit_url(outfit), method: 'delete', data: { confirm: "Do you really want to delete this outfit?" } %></td>
+
+    </tr>
+  <%# end %>
+  </tbody>
+</table>
+
+<%#= render 'new_outfit_form', :@outfit => Outfit.new %>
+
+
+<%= link_to "Yes, I'll wear the whole outfit; save it!", outfits_url(:shirt_top_id => @shirt_top.id, :pant_id => @pant.id, :shoe_id => @shoe.id), method: :post   %>
+<%= link_to "Give me an entire new combo.", method: :index %>
+<p>Or else click the item(s) you like and continue to randomize the rest!</p>

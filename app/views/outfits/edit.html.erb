@@ -1,0 +1,11 @@
+<h1>Editing Outfit #<%= @outfit.id %></h1>
+
+
+<%= form_tag(outfit_url(@outfit), method: 'patch') do %>
+
+
+  <div>
+    <%= submit_tag "Update Outfit" %>
+  </div>
+
+<% end %>

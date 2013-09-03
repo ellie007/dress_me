@@ -1,6 +1,9 @@
   class ShirtTopsController < ApplicationController
 
-  def index
+  def index1
+    @shirt_tops = ShirtTop.all
+  end
+  def index2
     @shirt_tops = ShirtTop.all
   end
 
@@ -19,10 +22,11 @@
     @shirt_top.product_id = params[:product_id]
     @shirt_top.color = params[:color]
     @shirt_top.size = params[:size]
+    @shirt_top.outfit_id = params[:outfit_id]
 
 
     if @shirt_top.save
-      redirect_to shirt_tops_url
+      redirect_to shirt_tops1_url
     else
       render 'new'
     end
@@ -39,9 +43,10 @@
     @shirt_top.product_id = params[:product_id]
     @shirt_top.color = params[:color]
     @shirt_top.size = params[:size]
+    @shirt_top.outfit_id = params[:outfit_id]
 
     if @shirt_top.save
-      redirect_to shirt_tops_url
+      redirect_to shirt_tops1_url
     else
       render 'new'
     end
@@ -50,6 +55,6 @@
   def destroy
     @shirt_top = ShirtTop.find_by_id(params[:id])
     @shirt_top.destroy
-    redirect_to shirt_tops_url
+    redirect_to shirt_tops1_url
   end
 end

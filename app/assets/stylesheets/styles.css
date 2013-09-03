@@ -1,0 +1,22 @@
+.item-img{
+  display: block;
+}
+
+.shirt-tops{
+  float:left;
+  margin-right: 10px;
+}
+
+.pants{
+  float:left;
+  margin-right: 10px;
+}
+
+.shoes{
+  float:left;
+  margin-right: 10px;
+}
+
+.clearfix {
+  clear: both;
+}

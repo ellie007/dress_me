@@ -24,3 +24,6 @@
   <b>Size:</b>
   <%= @pant.size %>
 </p>
+
+<td><%= link_to 'Edit', edit_pant_url(@pant) %></td>
+      <td><%= link_to 'Destroy', pant_url(@pant), method: 'delete', data: { confirm: "Do you really want to delete this shoe?" } %></td>

@@ -1,8 +1,8 @@
 <h1>Shirt/Top #<%= @shirt_top.id %></h1>
 
 <p>
-  <b>Image:</b>
-  <%= image_tag @shirt_top.image_url, width: 300 %>
+  <b>Image:</b></p>
+  <p><%= image_tag @shirt_top.image_url, width: 300 %>
 </p>
 
 <p>
@@ -25,3 +25,5 @@
   <%= @shirt_top.size %>
 </p>
 
+      <td><%= link_to 'Edit', edit_shirt_top_url(@shirt_top) %></td>
+      <td><%= link_to 'Destroy', shirt_top_url(@shirt_top), method: 'delete', data: { confirm: "Do you really want to delete this shirt_top?" } %></td>

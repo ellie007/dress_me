@@ -1,6 +1,9 @@
 class PantsController < ApplicationController
 
-  def index
+  def index1
+    @pants = Pant.all
+  end
+  def index2
     @pants = Pant.all
   end
 
@@ -14,9 +17,14 @@ class PantsController < ApplicationController
 
   def create
     @pant = Pant.new
-    
+    @pant.name = params[:name]
+    @pant.product_id = params[:product_id]
+    @pant.color = params[:color]
+    @pant.size = params[:size]
+    @pant.image_url = params[:image_url]
+
     if @pant.save
-      redirect_to pants_url
+      redirect_to pants1_url
     else
       render 'new'
     end
@@ -28,9 +36,14 @@ class PantsController < ApplicationController
 
   def update
     @pant = Pant.find_by_id(params[:id])
-    
+    @pant.name = params[:name]
+    @pant.product_id = params[:product_id]
+    @pant.color = params[:color]
+    @pant.size = params[:size]
+    @pant.image_url = params[:image_url]
+
     if @pant.save
-      redirect_to pants_url
+      redirect_to pants1_url
     else
       render 'new'
     end
@@ -39,6 +52,6 @@ class PantsController < ApplicationController
   def destroy
     @pant = Pant.find_by_id(params[:id])
     @pant.destroy
-    redirect_to pants_url
+    redirect_to pants1_url
   end
 end

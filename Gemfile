@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
+#group :development do
+  #gem 'better_errors'
+  #gem 'binding_of_caller'
+#end
 
 group :production do
   gem 'pg'
@@ -47,7 +47,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'

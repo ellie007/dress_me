@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 
 
-  <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/amelia/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/simplex/bootstrap.min.css" rel="stylesheet">
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 
@@ -30,13 +30,17 @@
         <div class="nav-collapse">
           <ul class="nav">
 
-            <li><%= link_to "Home", "/users" %></li>
+            <li><%= link_to "Home", "/outfits" %></li>
             <li><%= link_to "Users", "/users" %></li>
+            <li><%= link_to "Random", "/outfits1" %></li>
+            <li><%= link_to "Custom", "/outfits3" %></li>
+            <li><%= link_to "Outfits", "/outfits2" %></li>
+            <li><%= link_to "Shirt Tops", "/shirt_tops1" %></li>
+            <li><%= link_to "Pants", "/pants1" %></li>
+            <li><%= link_to "Shoes", "/shoes1" %></li>
             <li><%= link_to "Dress Codes", "/dress_codes" %></li>
-            <li><%= link_to "Shirt Tops", "/shirt_tops" %></li>
-            <li><%= link_to "Pants", "/pants" %></li>
-            <li><%= link_to "Shoes", "/shoes" %></li>
             <li><a href="#about">About</a></li>
+
           </ul>
         </div>
       </div>
@@ -44,6 +48,15 @@
   </div>
 
   <div class="container">
+
+    <div class="container">
+    <% if current_user.present? %>
+      Signed in as <%=current_user.name %>.
+      <%= link_to "Sign Out", session_url, :method => 'delete' %>
+    <% else %>
+      <%= link_to "Sign In", new_session_url %>
+      <% end %>
+
 
     <% flash.each do |name, msg| %>
       <div class="alert alert-<%= name == :notice ? "success" : "error" %>">

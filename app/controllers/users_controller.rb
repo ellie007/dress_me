@@ -16,6 +16,9 @@ class UsersController < ApplicationController
     @user = User.new
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+
     @user.height = params[:height]
     @user.weight = params[:weight]
     @user.body_type = params[:body_type]
@@ -35,6 +38,9 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+
     @user.height = params[:height]
     @user.weight = params[:weight]
     @user.body_type = params[:body_type]
