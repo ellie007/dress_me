@@ -3,6 +3,6 @@
 <p><%= link_to 'Add a New Shoe', new_shoe_url %></p>
 
  <% @shoes.each do |shoe| %>
-    <%= link_to (image_tag shoe.image_url, width: 178), shoe_url(shoe.id) %>
+    <%= link_to (image_tag shoe.image_url, width: 178, class: "index_img"), shoe_url(shoe.id) %>
   <% end %>
 

@@ -1,0 +1,32 @@
+<h1>Listing posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+
+<br>
+      <% @posts.order('created_at DESC').all.each do |post| %>
+
+      <h4><%= post.created_at.strftime("%A, %d %B %Y") %></h4>
+
+      <h2><%= link_to post.title, post_url(post) %></h2>
+
+      <h4>Authored by: <%= post.author %></h4>
+      <br>
+      <%= post.body %>
+
+<br><br>
+      <div class = "border">
+      <i class="icon-facebook icon-large blog_icons"></i>
+      <i class="icon-google-plus icon-large blog_icons"></i>
+      <i class="icon-twitter icon-large blog_icons"></i>
+      <%= link_to "Comments", posts_url, class: "float" %>
+      </div>
+
+<br><br>
+
+<% end %>
+
+
+
+
+
+

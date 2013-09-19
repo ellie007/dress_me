@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-#group :development do
-  #gem 'better_errors'
-  #gem 'binding_of_caller'
-#end
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 group :production do
   gem 'pg'
@@ -34,6 +34,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

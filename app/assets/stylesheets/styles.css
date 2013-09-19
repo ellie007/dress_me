@@ -1,22 +1,62 @@
-.item-img{
+selection:hover {
+background-color:gray;
+opacity:0.6;
+}
+
+.item-img {
   display: block;
 }
 
-.shirt-tops{
+.shirt-tops {
   float:left;
-  margin-right: 10px;
+  margin-right: 5px;
+  border:1px solid #999999;
 }
 
-.pants{
+.pants {
   float:left;
-  margin-right: 10px;
+  margin-right: 5px;
+  border:1px solid #999999;
 }
 
-.shoes{
+.shoes {
   float:left;
-  margin-right: 10px;
+  margin-right: 5px;
+  border:1px solid #999999;
 }
 
 .clearfix {
   clear: both;
 }
+
+.index_img {
+  border:1px solid #999999;
+}
+
+.blog_icons {
+  margin-right: 4px;
+}
+
+.float {
+  float:right;
+}
+
+.border {
+  border-top-style: solid;
+  border-top-width:1px;
+  border-top-color: #C0C0C0;
+  padding:18px 0px;
+
+  border-bottom-style: solid;
+  border-bottom-width:1px;
+  border-bottom-color: #C0C0C0;
+  padding:18px 0px;
+}
+
+.alert-success {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+

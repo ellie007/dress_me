@@ -1,26 +1,27 @@
-<%= form_for(@outfit) do |o| %>
-  <% if @outfit.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@outfit.errors.count, "error") %> prohibited this outfit from being saved:</h2>
+# <%= form_for(@outfit) do |o| %>
+#   <% if @outfit.errors.any? %>
+#     <div id="error_explanation">
+#       <h2><%= pluralize(@outfit.errors.count, "error") %> prohibited this outfit from being saved:</h2>
 
-      <%= o.label :shirt_top_id %>
-      <%= o.number_field :@shirt_top %>
 
-      <%= o.label :pant_id %>
-      <%= o.number_field :@pant %>
+#       <%= o.radio_button :shirt_top_id, shirt_top.id %>
+#       <%= o.label "shirt_top_id_#{shirt_top.id}" %>
 
-      <%= o.label :shoe_id %>
-      <%= o.number_field :@shoe %>
+#       <%= o.radio_button :pant_id, pant.id %>
+#       <%= o.label "shirt_top_id_#{pant_top.id}" %>
 
-      <ul>
-      <% @outfit.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+#       <%= o.radio_button :shoe_id, shoe.id %>
+#       <%= o.label "shirt_top_id_#{shoe_top.id}" %>
 
-  <div class="actions">
-    <%= o.submit %>
-  </div>
-<% end %>
+#       <ul>
+#       <% @outfit.errors.full_messages.each do |msg| %>
+#         <li><%= msg %></li>
+#       <% end %>
+#       </ul>
+#     </div>
+#   <% end %>
+
+#   <div class="actions">
+#     <%= o.submit %>
+#   </div>
+# <% end %>

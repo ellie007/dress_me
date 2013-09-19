@@ -3,7 +3,7 @@
 <p><%= link_to 'Add a New Shirt Top', new_shirt_top_url %></p>
 <div>
   <% @shirt_tops.each do |shirt_top| %>
-    <%= link_to (image_tag shirt_top.image_url, width: 178), shirt_top_url(shirt_top.id), class: "selection" %>
+    <%= link_to (image_tag shirt_top.image_url, width: 178, class: "index_img"), shirt_top_url(shirt_top.id) %>
   <% end %>
 </div>
 

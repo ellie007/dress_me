@@ -2,23 +2,41 @@ class OutfitsController < ApplicationController
 
   def index
     @shirt_tops = ShirtTop.all
-    @shirt_top = @shirt_tops.find(:all).sample
+
+    if params[:shirt_top_id].present?
+     # pull up the shirt corresponding to the shirt in the params hash
+     @shirt_top = ShirtTop.find_by_id(params[:shirt_top_id])
+    else
+      # pull up a random shirt
+      @shirt_top = @shirt_tops.find(:all).sample
+    end
+
 
     @pants = Pant.all
-    @pant = @pants.find(:all).sample
+
+     if params[:pant_id].present?
+     # pull up the shirt corresponding to the shirt in the params hash
+     @pant = Pant.find_by_id(params[:pant_id])
+    else
+      # pull up a random shirt
+      @pant = @pants.find(:all).sample
+    end
 
     @shoes = Shoe.all
-    @shoe = @shoes.find(:all).sample
+
+     if params[:shoe_id].present?
+     # pull up the shirt corresponding to the shirt in the params hash
+     @shoe = Shoe.find_by_id(params[:shoe_id])
+    else
+      # pull up a random shirt
+      @shoe = @shoes.find(:all).sample
+    end
+
+    @outfit = Outfit.new
   end
 
   def index2
     @outfits = Outfit.all
-  end
-
-  def index3
-    @shirt_tops = ShirtTop.all
-    @pants = Pant.all
-    @shoes = Shoe.all
   end
 
   def show
@@ -31,13 +49,21 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new
-    @outfit.shirt_top_id = params[:shirt_top_id]
-    @outfit.pant_id = params[:pant_id]
-    @outfit.shoe_id = params[:shoe_id]
+
+    @shirt_tops = ShirtTop.all
+    @pants = Pant.all
+    @shoes = Shoe.all
+
+    @outfit.shirt_top_id = params[:outfit][:shirt_top_id]
+    @outfit.pant_id = params[:outfit][:pant_id]
+    @outfit.shoe_id = params[:outfit][:shoe_id]
+    @outfit.date = params[:outfit][:date]
 
     if @outfit.save
+      flash[:notice] = "Congratulations on your new outfit!  You look BEAUTIFUL!"
       redirect_to outfit_url(@outfit.id)
       #redirect_to "outfits/#{@outfit.id}"
+
     else
       render 'new'
     end
@@ -49,9 +75,9 @@ class OutfitsController < ApplicationController
 
   def update
     @outfit = Outfit.find_by_id(params[:id])
-
+    @outfit.date = params[:date]
     if @outfit.save
-      redirect_to outfits_url
+      redirect_to '/outfits2'
     else
       render 'new'
     end
@@ -60,11 +86,11 @@ class OutfitsController < ApplicationController
   def destroy
     @outfit = Outfit.find_by_id(params[:id])
     @outfit.destroy
-    redirect_to outfits_url
+    redirect_to outfits2_url
   end
 
   def outfit_params
-    params.require(:outfit).permit(:shirt_top_id, :pant_id, :shoe_id)
+    params.require(:outfit).permit(:shirt_top_id, :pant_id, :shoe_id, :date)
   end
 
 end

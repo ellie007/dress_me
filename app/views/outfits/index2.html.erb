@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Outfit ID:</th>
+      <th>Date:</th>
       <th>Shirt/Top:</th>
       <th>Pant:</th>
       <th>Shoe:</th>
@@ -14,6 +15,7 @@
     <% @outfits.each do |outfit| %>
       <tr>
         <td><%= outfit.id %></td>
+        <td><%= outfit.date %></td>
         <td><%= image_tag outfit.shirt_top.image_url, width: 125 %></td>
         <td><%= image_tag outfit.pant.image_url, width: 125 %></td>
         <td><%= image_tag outfit.shoe.image_url, width: 125 %></td>
@@ -27,4 +29,4 @@
 
 <br>
 
-<%#= link_to 'New Combination', new_combination_path %>
+

@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h4><%= @comment.name %> | <%= @comment.created_at.strftime("%A, %d %B %Y") %></h4>
+
+      <p><%= @comment.body %></p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Back', posts_path %>
+
+   <h4><%= @post.created_at.strftime("%A, %d %B %Y") %></h4>
+
+   <h2><%= @post.title %></h2>
+
+  <h4>Authored by: <%= @post.author %></h4>
+
+  <%= @post.body %>
+
+<%= render template: '/comments/form' %>

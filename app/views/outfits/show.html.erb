@@ -1,12 +1,15 @@
 <h1>Outfit #<%= @outfit.id %></h1>
-
+<br>
     <td><%= image_tag @outfit.shirt_top.image_url, width: 250 %></td>
     <td><%= image_tag @outfit.pant.image_url, width: 250 %></td>
     <td><%= image_tag @outfit.shoe.image_url, width: 250 %></td>
-
+<br>
+<br>
       <div>
-      <strong><p>Outfit Consists of:</p></strong>
-      <p>Shirt/Top: <%= @outfit.shirt_top.name %> </p>
-      <p>Pant: <%= @outfit.pant.name %> </p>
-      <p>Shoe: <%= @outfit.Shoe.name %> </p>
+      <strong><h3>Outfit Consists of:</h3></strong>
+      <p><strong>Shirt/Top:</strong> <%= @outfit.shirt_top.name %> </p>
+      <p><strong>Pant:</strong> <%= @outfit.pant.name %> </p>
+      <p><strong>Shoe:</strong> <%= @outfit.shoe.name %> </p>
+
+
       <div>

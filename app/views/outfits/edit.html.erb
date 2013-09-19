@@ -3,9 +3,16 @@
 
 <%= form_tag(outfit_url(@outfit), method: 'patch') do %>
 
+<%= render 'datepicker' %>
 
-  <div>
-    <%= submit_tag "Update Outfit" %>
-  </div>
+  <%= button_tag "Save Date" %>
 
 <% end %>
+
+
+
+
+
+
+
+

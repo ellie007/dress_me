@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap.min
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -22,6 +23,11 @@
 $('<element to target>').on('mouseenter', function() {
   $(this).addClass('<class name>')
 )};
+
+$('#datepicker').datepicker();
+});
+
+
 
 
 
