@@ -19,10 +19,9 @@
 
 // USE CSS HOVER CLASS OVER JQUERY
 // Step 1. create a .highlighted class in your css to style when something is clicked
-
-$('<element to target>').on('mouseenter', function() {
-  $(this).addClass('<class name>')
-)};
+//$('<element to target>').on('mouseenter', function() {
+  //$(this).addClass('<class name>')
+//)};
 
 $('#datepicker').datepicker();
 });
