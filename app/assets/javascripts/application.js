@@ -23,8 +23,8 @@
   //$(this).addClass('<class name>')
 //)};
 
-$('#datepicker').datepicker();
-});
+// $('#datepicker').datepicker();
+// });
 
 
 
