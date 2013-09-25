@@ -23,8 +23,11 @@
   //$(this).addClass('<class name>')
 //)};
 
-// $('#datepicker').datepicker();
-// });
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 
 
 
