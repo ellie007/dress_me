@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909212050) do
+ActiveRecord::Schema.define(version: 20130924230816) do
 
   create_table "combinations", force: true do |t|
     t.integer  "shirt_top_id"
@@ -51,8 +51,11 @@ ActiveRecord::Schema.define(version: 20130909212050) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "author"
-    t.datetime "date"
     t.string   "body"
+    t.string   "blog_post_pics_file_name"
+    t.string   "blog_post_pics_content_type"
+    t.integer  "blog_post_pics_file_size"
+    t.datetime "blog_post_pics_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

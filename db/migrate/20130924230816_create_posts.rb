@@ -3,9 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :author
-      t.integer :date
       t.string :body
-
+      t.attachment :blog_post_pics
       t.timestamps
     end
   end

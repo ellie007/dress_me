@@ -6,7 +6,7 @@ DressMe::Application.routes.draw do
 
   root 'outfits#index'
 
-   get '/sessions/new' => 'sessions#new', :as => 'new_session'
+  get '/sessions/new' => 'sessions#new', :as => 'new_session'
   post '/sessions' => 'sessions#create', :as => 'sessions'
   delete '/sessions' => 'sessions#destroy', :as => 'session'
 
