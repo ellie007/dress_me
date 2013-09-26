@@ -23,10 +23,14 @@
 <%= render :partial => '/comments/form', :comment => @comment %>
 
 <br>
-<h4>COMMENTS</h4>
+<% if @post.comments.count == 1 %>
+<h4><%= @post.comments.count %> COMMENT</h4>
+<% else %>
+<%= @post.comments.count %> COMMENTS</h4>
+<% end %>
 <br>
 
 <% @post.comments.each do |comment| %>
 <h4><%= comment.name.upcase %> | <%= comment.created_at.strftime("%A, %d %B %Y") %></h4>
-<h5><%= comment.body %></h5>
+<h4><%= comment.body %></h4>
 <% end %>
