@@ -16,7 +16,7 @@
       <i class="icon-facebook icon-large blog_icons"></i>
       <i class="icon-google-plus icon-large blog_icons"></i>
       <i class="icon-twitter icon-large blog_icons"></i>
-      <%= link_to "Comments", @post, class: "float" %>
+      <div class= "float"><%= @post.comments.count %> <%= 'Comments' %></div>
   </div>
   <br>
 
@@ -25,12 +25,17 @@
 <br>
 <% if @post.comments.count == 1 %>
 <h4><%= @post.comments.count %> COMMENT</h4>
-<% else %>
-<%= @post.comments.count %> COMMENTS</h4>
-<% end %>
 <br>
+<% else %>
+<h4><%= @post.comments.count %> COMMENTS</h4>
+<br>
+<% end %>
+
 
 <% @post.comments.each do |comment| %>
 <h4><%= comment.name.upcase %> | <%= comment.created_at.strftime("%A, %d %B %Y") %></h4>
-<h4><%= comment.body %></h4>
+<%= comment.body %>
+<br><br>
 <% end %>
+
+<br><br><br><br>

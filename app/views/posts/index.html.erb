@@ -18,7 +18,10 @@
       <i class="icon-facebook icon-large blog_icons"></i>
       <i class="icon-google-plus icon-large blog_icons"></i>
       <i class="icon-twitter icon-large blog_icons"></i>
-      <%= link_to "Comments", post, class: "float" %>
+      <% link_text = "#{post.comments.count} #{pluralize(post.comments.count,
+'Comment')}" %>
+        <%= link_to link_text, post, class: "float" %>
+
       </div>
 
 <br><br>
