@@ -11,4 +11,22 @@
 
   <%= @post.body %>
 
-<%#= render template: '/comments/form' %>
+<br><br>
+  <div class = "border">
+      <i class="icon-facebook icon-large blog_icons"></i>
+      <i class="icon-google-plus icon-large blog_icons"></i>
+      <i class="icon-twitter icon-large blog_icons"></i>
+      <%= link_to "Comments", @post, class: "float" %>
+  </div>
+  <br>
+
+<%= render :partial => '/comments/form', :comment => @comment %>
+
+<br>
+<h4>COMMENTS</h4>
+<br>
+
+<% @post.comments.each do |comment| %>
+<h4><%= comment.name.upcase %> | <%= comment.created_at.strftime("%A, %d %B %Y") %></h4>
+<h5><%= comment.body %></h5>
+<% end %>

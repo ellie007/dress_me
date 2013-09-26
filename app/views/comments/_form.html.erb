@@ -1,3 +1,5 @@
+<h4>CHIME IN WITH A RESPONSE</h4>
+
 <%= form_for(@comment) do |c| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -12,20 +14,19 @@
   <% end %>
 
 <div>
-  <%#= c.label :post_id %>
-  <%#= c.text_area :post_id, post.id %>
+  <%= c.hidden_field :post_id, :value => @post.id %>
 </div>
 
   <div>
   <%= c.label :name %>
-  <%= c.text_area :name %>
+  <%= c.text_field :name %>
 </div>
 
 <br>
 
 <div>
   <%= c.label :body %>
-  <%= c.text_area(:body, cols: 40, rows: 15)  %>
+  <%= c.text_area(:body, cols: 80, rows: 15)  %>
 </div>
 
 <br>
