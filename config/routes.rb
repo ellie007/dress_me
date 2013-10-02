@@ -1,4 +1,5 @@
 DressMe::Application.routes.draw do
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
   resources :comments
 

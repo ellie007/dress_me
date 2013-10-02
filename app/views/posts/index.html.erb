@@ -2,6 +2,12 @@
 
 <%= link_to 'New Post', new_post_path %>
 
+<div id="tag_cloud">
+<% tag_cloud Post.tag_counts, %w{s, m, l} do |tag, css_class|  %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+<div>
+
 <br>
       <% @posts.order('created_at DESC').all.each do |post| %>
 
@@ -14,6 +20,8 @@
       <%= post.body %>
       <br>
       <%= image_tag post.blog_post_pics.url %>
+      <br>
+      Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 <br><br>
       <div class = "border">
       <i class="icon-facebook icon-large blog_icons"></i>

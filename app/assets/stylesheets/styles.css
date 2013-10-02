@@ -59,4 +59,10 @@ opacity:0.6;
   padding: 20px 0;
 }
 
-
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 5.0em; border:1px solid #999999;}
+  .m { font-size: 5.0em; border:1px solid #999999;}
+  .l { font-size: 5.0em; border:1px solid #999999;}
+}

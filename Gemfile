@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'acts-as-taggable-on'
+
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
