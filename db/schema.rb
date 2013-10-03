@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002174618) do
+ActiveRecord::Schema.define(version: 20131003210337) do
 
   create_table "combinations", force: true do |t|
     t.integer  "shirt_top_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131002174618) do
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "post_id"
+    t.integer  "post_id",    limit: 255
   end
 
   create_table "dress_codes", force: true do |t|

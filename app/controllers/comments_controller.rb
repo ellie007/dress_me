@@ -62,7 +62,7 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url }
       format.json { head :no_content }
     end
-  end
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.

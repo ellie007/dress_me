@@ -9,6 +9,12 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+
+
+  def tag_list
+    tags.map(&:name).join(", ")
+  end
+
   end
 
   # GET /posts/1

@@ -2,13 +2,18 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<div id="tag_cloud">
-<% tag_cloud Post.tag_counts, %w{s, m, l} do |tag, css_class|  %>
-      <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-      <% end %>
+<!-- <div id="tag_cloud">
+<%# tag_cloud Post.tag_counts, %w{s, m, l} do |tag, css_class|  %>
+      <%#= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <%# end %>
 <div>
-
+ -->
 <br>
+ <% Post.tag_counts.each do |tag| %>
+<%= link_to tag.name, tag_path(tag.name), class: "blog_tags" %>
+<% end %>
+<br>
+
       <% @posts.order('created_at DESC').all.each do |post| %>
 
       <h4><%= post.created_at.strftime("%A, %d %B %Y") %></h4>
@@ -27,10 +32,8 @@
       <i class="icon-facebook icon-large blog_icons"></i>
       <i class="icon-google-plus icon-large blog_icons"></i>
       <i class="icon-twitter icon-large blog_icons"></i>
-      <% link_text = "#{pluralize(post.comments.count,
-'Comment')}" %>
-        <%= link_to link_text, post, class: "float" %>
-
+      <% link_text = "#{pluralize(post.comments.count, 'Comment')}" %>
+      <%= link_to link_text, post, class: "float" %>
       </div>
 
 <br><br>
