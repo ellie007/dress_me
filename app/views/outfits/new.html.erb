@@ -2,6 +2,11 @@
 <%= link_to "<button>Random</button>".html_safe, outfits1_url, :id => "button_id", :class => "button_class" %>
 
 <%= form_for @outfit do |o| %>
+
+  <div>
+    <%= text_field_tag :current_user_id, current_user.id  %>
+  </div>
+
   <h3>Pick a Shirt:</h3>
   <div class = "selectable">
     <% ShirtTop.all.each do |shirt_top| %>

@@ -1,10 +1,11 @@
 class ShoesController < ApplicationController
 
   def index1
-    @shoes = Shoe.all
+      #@shoes = Shoe.all
+      @shoes = Shoe.where(user_id: current_user.id)
   end
   def index2
-    @shoes = Shoe.all
+    @shoes = Shoe.where(user_id: current_user.id)
   end
 
   def show
@@ -17,6 +18,7 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = Shoe.new
+    @shoe.user_id = params[:user_id]
     @shoe.image_url = params[:image_url]
     @shoe.name = params[:name]
     @shoe.product_id = params[:product_id]

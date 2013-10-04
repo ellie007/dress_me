@@ -1,10 +1,10 @@
 class PantsController < ApplicationController
 
   def index1
-    @pants = Pant.all
+    @pants = ShirtTop.where(user_id: current_user.id)
   end
   def index2
-    @pants = Pant.all
+    @pants = ShirtTop.where(user_id: current_user.id)
   end
 
   def show
@@ -17,6 +17,7 @@ class PantsController < ApplicationController
 
   def create
     @pant = Pant.new
+    @pant.user_id = params[:user_id]
     @pant.name = params[:name]
     @pant.product_id = params[:product_id]
     @pant.color = params[:color]

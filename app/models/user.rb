@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  #has_many :body_types
-  #has_many :clothings
+  has_many :shirt_tops
+  has_many :pants
+  has_many :shoes
 
   has_secure_password
 

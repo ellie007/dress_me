@@ -4,6 +4,10 @@
 <%= form_tag(pants_url, method: 'post') do %>
 
   <div>
+    <%= hidden_field :user_id, current_user.id  %>
+  </div>
+
+  <div>
     <%= label_tag :image_url, 'Image URL'%><br />
     <%= text_field_tag :image_url %>
   </div>

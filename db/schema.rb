@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004164357) do
+ActiveRecord::Schema.define(version: 20131004173523) do
 
   create_table "combinations", force: true do |t|
     t.integer  "shirt_top_id"
@@ -38,14 +38,16 @@ ActiveRecord::Schema.define(version: 20131004164357) do
     t.integer "pant_id"
     t.integer "shoe_id"
     t.string  "date"
+    t.integer "user_id"
   end
 
   create_table "pants", force: true do |t|
-    t.string "name"
-    t.string "product_id"
-    t.string "color"
-    t.string "size"
-    t.string "image_url"
+    t.string  "name"
+    t.string  "product_id"
+    t.string  "color"
+    t.string  "size"
+    t.string  "image_url"
+    t.integer "user_id"
   end
 
   create_table "posts", force: true do |t|
@@ -67,14 +69,16 @@ ActiveRecord::Schema.define(version: 20131004164357) do
     t.string  "size"
     t.string  "image_url"
     t.integer "outfit_id"
+    t.integer "user_id"
   end
 
   create_table "shoes", force: true do |t|
-    t.string "name"
-    t.string "product_id"
-    t.string "color"
-    t.string "size"
-    t.string "image_url"
+    t.string  "name"
+    t.string  "product_id"
+    t.string  "color"
+    t.string  "size"
+    t.string  "image_url"
+    t.integer "user_id"
   end
 
   create_table "taggings", force: true do |t|

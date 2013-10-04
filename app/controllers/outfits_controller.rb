@@ -8,7 +8,8 @@ class OutfitsController < ApplicationController
      @shirt_top = ShirtTop.find_by_id(params[:shirt_top_id])
     else
       # pull up a random shirt
-      @shirt_top = @shirt_tops.find(:all).sample
+      #@shirt_top = @shirt_tops.find(:all).sample
+      @shirt_tops.where(user_id: current_user.id).sample
     end
 
 
@@ -19,7 +20,7 @@ class OutfitsController < ApplicationController
      @pant = Pant.find_by_id(params[:pant_id])
     else
       # pull up a random shirt
-      @pant = @pants.find(:all).sample
+      #@pant = @pants.find(:all).sample
     end
 
     @shoes = Shoe.all
@@ -29,14 +30,14 @@ class OutfitsController < ApplicationController
      @shoe = Shoe.find_by_id(params[:shoe_id])
     else
       # pull up a random shirt
-      @shoe = @shoes.find(:all).sample
+      #@shoe = @shoes.find(:all).sample
     end
 
     @outfit = Outfit.new
   end
 
   def index2
-    @outfits = Outfit.all
+    @outfits = Outfit.where(user_id: current_user.id)
   end
 
   def show

@@ -1,10 +1,10 @@
   class ShirtTopsController < ApplicationController
 
   def index1
-    @shirt_tops = ShirtTop.all
+    @shirt_tops = ShirtTop.where(user_id: current_user.id)
   end
   def index2
-    @shirt_tops = ShirtTop.all
+    @shirt_tops = ShirtTop.where(user_id: current_user.id)
   end
 
   def show
@@ -17,6 +17,7 @@
 
   def create
     @shirt_top = ShirtTop.new
+    @shirt_top.user_id = params[:user_id]
     @shirt_top.image_url = params[:image_url]
     @shirt_top.name = params[:name]
     @shirt_top.product_id = params[:product_id]
