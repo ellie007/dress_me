@@ -2,12 +2,6 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<!-- <div id="tag_cloud">
-<%# tag_cloud Post.tag_counts, %w{s, m, l} do |tag, css_class|  %>
-      <%#= link_to tag.name, tag_path(tag.name), class: css_class %>
-      <%# end %>
-<div>
- -->
 <br>
  <% Post.tag_counts.each do |tag| %>
 <%= link_to tag.name, tag_path(tag.name), class: "blog_tags" %>
