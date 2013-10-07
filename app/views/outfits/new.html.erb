@@ -4,12 +4,13 @@
 <%= form_for @outfit do |o| %>
 
   <div>
-    <%= text_field_tag :current_user_id, current_user.id  %>
+    <%= o.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <h3>Pick a Shirt:</h3>
   <div class = "selectable">
-    <% ShirtTop.all.each do |shirt_top| %>
+    <%# ShirtTop.all.each do |shirt_top| %>
+    <% ShirtTop.where(:user_id => current_user.id).each do |shirt_top| %>
       <div class="shirt-tops">
         <%= o.radio_button :shirt_top_id, shirt_top.id, style: "display: none" %>
         <%= o.label "shirt_top_id_#{shirt_top.id}", (image_tag shirt_top.image_url, width: 173, class: 'item-img') %>
@@ -20,7 +21,8 @@
 
   <h3>Pick a Pant:</h3>
     <div class = "selectable">
-      <% Pant.all.each do |pant| %>
+      <%# Pant.all.each do |pant| %>
+      <% Pant.where(:user_id => current_user.id).each do |pant| %>
         <div class='pants'>
           <%= o.radio_button :pant_id, pant.id, style: "display: none"  %>
           <%= o.label "pant_id_#{pant.id}", (image_tag pant.image_url, width: 173, class: 'item-img') %>
@@ -31,7 +33,8 @@
 
   <h3>Pick a Shoe:</h3>
   <div class = "selectable">
-    <% Shoe.all.each do |shoe| %>
+    <%# Shoe.all.each do |shoe| %>
+    <% Shoe.where(:user_id => current_user.id).each do |shoe| %>
       <div class = 'shoes'>
         <%= o.radio_button :shoe_id, shoe.id, style: "display: none"  %>
         <%= o.label "shoe_id_#{shoe.id}", (image_tag shoe.image_url, width: 173, class: 'item-img') %>

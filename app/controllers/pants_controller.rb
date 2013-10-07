@@ -1,10 +1,10 @@
 class PantsController < ApplicationController
 
   def index1
-    @pants = ShirtTop.where(user_id: current_user.id)
+    @pants = Pant.where(user_id: current_user.id)
   end
   def index2
-    @pants = ShirtTop.where(user_id: current_user.id)
+    @pants = Pant.where(user_id: current_user.id)
   end
 
   def show

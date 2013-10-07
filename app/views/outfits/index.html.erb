@@ -25,23 +25,31 @@
   </thead>
 
   <tbody>
+
+    <div>
+      <%= hidden_field_tag :user_id, current_user.id %>
+    </div>
+
     <tr>
-      <td>
-        <%= check_box_tag :shirt_top_id, @shirt_top.id %>
+      <td><%= check_box_tag :shirt_top_id, @shirt_top.id %>
         <%= label_tag "shirt_top_id_#{@shirt_top.id}", (image_tag @shirt_top.image_url, width: 300, class: "index_img selectable") %></td>
+
 
       <td><%= check_box_tag :pant_id, @pant.id %>
         <%= label_tag "pant_id_#{@pant.id}", (image_tag @pant.image_url, width: 300, class: 'index_img selectable') %></td>
 
+
       <td><%= check_box_tag :shoe_id, @shoe.id %>
         <%= label_tag "shoe_id_#{@shoe.id}", (image_tag @shoe.image_url, width: 300, class: 'index_img selectable') %></td>
+
+
     </tr>
   </tbody>
 </table>
 <h4><%= submit_tag "Or else click the item(s) you like and continue to randomize the rest!", :class => 'btn'  %></h4>
     <% end %>
 
-<h4><%= link_to "Yes, I'll wear the whole outfit; save it!", outfits_url(:outfit=>{:shirt_top_id => @shirt_top.id, :pant_id => @pant.id, :shoe_id => @shoe.id}), method: :post, :class => 'btn' %></h4>
+<h4><%= link_to "Yes, I'll wear the whole outfit; save it!", outfits_url(:outfit=>{:user_id => current_user.id, :shirt_top_id => @shirt_top.id, :pant_id => @pant.id, :shoe_id => @shoe.id}), method: :post, :class => 'btn' %></h4>
 <h4><%= button_tag link_to "Give me an entire new combo.", method: :index, :class => 'btn' %></h4>
 
 

@@ -4,7 +4,7 @@
 <%= form_tag(shoes_url, method: 'post') do %>
 
    <div>
-    <%= hidden_field :user_id, current_user.id  %>
+    <%= hidden_field_tag :user_id, current_user.id  %>
   </div>
 
   <div>

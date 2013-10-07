@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
     else
       # pull up a random shirt
       #@shirt_top = @shirt_tops.find(:all).sample
-      @shirt_tops.where(user_id: current_user.id).sample
+      @shirt_top = @shirt_tops.where(:user_id => current_user.id).sample
     end
 
 
@@ -20,7 +20,7 @@ class OutfitsController < ApplicationController
      @pant = Pant.find_by_id(params[:pant_id])
     else
       # pull up a random shirt
-      #@pant = @pants.find(:all).sample
+      @pant = @pants.where(:user_id => current_user.id).sample
     end
 
     @shoes = Shoe.all
@@ -30,7 +30,7 @@ class OutfitsController < ApplicationController
      @shoe = Shoe.find_by_id(params[:shoe_id])
     else
       # pull up a random shirt
-      #@shoe = @shoes.find(:all).sample
+      @shoe = @shoes.where(:user_id => current_user.id).sample
     end
 
     @outfit = Outfit.new
@@ -55,6 +55,7 @@ class OutfitsController < ApplicationController
     @pants = Pant.all
     @shoes = Shoe.all
 
+    @outfit.user_id = params[:outfit][:user_id]
     @outfit.shirt_top_id = params[:outfit][:shirt_top_id]
     @outfit.pant_id = params[:outfit][:pant_id]
     @outfit.shoe_id = params[:outfit][:shoe_id]
@@ -91,7 +92,7 @@ class OutfitsController < ApplicationController
   end
 
   def outfit_params
-    params.require(:outfit).permit(:shirt_top_id, :pant_id, :shoe_id, :date)
+    params.require(:outfit).permit(:shirt_top_id, :pant_id, :shoe_id, :date, :user_id)
   end
 
 end
